@@ -6,7 +6,7 @@ COPY go.mod ./
 RUN go mod download
 
 COPY cmd cmd
-RUN CGO_ENABLED=0 GOOS=linux GOFLAGS=-ldflags=-w go build -o /go/bin/actionstest -ldflags=-s -v github.com/stevesloka/actionstest/contour/
+RUN CGO_ENABLED=0 GOOS=linux GOFLAGS=-ldflags=-w go build -o /go/bin/actionstest -ldflags=-s -v github.com/stevesloka/actionstest/cmd/actionstest
 
 FROM scratch AS final
 COPY --from=build /go/bin/actionstest /bin/actionstest
