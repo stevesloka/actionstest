@@ -2,8 +2,7 @@ name: Build and push a release without :latest
 
 on:
   push:
-    branches:
-      - 'release-[0-9]*'
+g
     tags:
       - 'v[0-9]*.[0-9]*.[0-9]*-beta*'
       - 'v[0-9]*.[0-9]*.[0-9]*-alpha*'
@@ -17,7 +16,7 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        TAG_LATEST: "true"
+        TAG_LATEST: "false"
       run: |
         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         make push
