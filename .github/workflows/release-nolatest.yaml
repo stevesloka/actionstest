@@ -1,10 +1,13 @@
-name: Build and push a tagged release without :latest
+name: Build and push a release without :latest
 
 on:
   push:
+    branches:
+      - 'release-[0-9]*'
     tags:
-      - 'v[0-9]*.[0-9]*.[0-9]*[\\-]*'
-
+      - 'v[0-9]*.[0-9]*.[0-9]*-beta*'
+      - 'v[0-9]*.[0-9]*.[0-9]*-alpha*'
+      - 'v[0-9]*.[0-9]*.[0-9]*-rc*'
 jobs:
   build:
     runs-on: ubuntu-latest
