@@ -1,4 +1,4 @@
-name: Build and push a tagged release without :latest
+name: Build and push a release without :latest
 
 on:
   push:
