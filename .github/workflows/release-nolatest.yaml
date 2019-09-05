@@ -2,6 +2,8 @@ name: Build and push a release without :latest
 
 on:
   push:
+    branches:
+      - 'release-[0-9]*'
     tags:
       - 'v[0-9]*.[0-9]*.[0-9]*-beta*'
       - 'v[0-9]*.[0-9]*.[0-9]*-alpha*'
