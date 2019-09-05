@@ -1,4 +1,4 @@
-# actionstest v0.4.0-beta3
+# actionstest v0.4.0-rc1
 
 
 Some more changes.
